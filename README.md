@@ -1,4 +1,4 @@
-# Sistema para cadastro de vagas
+# Sistema de candidatura para vagas em programação
 
 Este é um sistema de candidatura a vagas de programação. Possui três serviços:
 
@@ -10,7 +10,7 @@ Este é um sistema de candidatura a vagas de programação. Possui três serviç
 
 - O candidato preenche seus dados pessoais e preenche o nível de cada uma de suas habilidades técnicas
 - Os campos nome e email são obrigatórios e o campo de email é validado no cliente e no servidor
-- De acordo com a resposta dada sobre o nível das habilidades técnicas são enviados diferentes tipos de email para o endereço cadastrado
+- De acordo com a resposta dada sobre os níveis das habilidades técnicas, são enviados diferentes tipos de email para o endereço informado
 
 ## Executando o sistema web
 
@@ -34,7 +34,7 @@ docker-compose up --build
 
 ### Rodando via Kubernetes (modo de desenvolvimento com skaffold)
 
-- Necessário instalar [kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl/), [minikube](https://kubernetes.io/docs/tasks/tools/install-minikube/) (cluster local) e [skaffold](https://skaffold.dev/docs/install/) (modo desenvolvimento)
+- Necessário instalar [kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl/) (controlador), [minikube](https://kubernetes.io/docs/tasks/tools/install-minikube/) (cluster local) e [skaffold](https://skaffold.dev/docs/install/) (modo desenvolvimento)
 - Iniciar um nó no cluster
 
 ```bash
@@ -57,7 +57,7 @@ skaffold dev
 
 ### Rodando via npm
 
-- Rodar via npm só é possível alterando a URL da requisição para envio do formulário (arquivo /client/src/Form.js:20)
+- Rodar via npm só é possível alterando a URL do servidor para envio do formulário (arquivo /client/src/Form.js:20)
 
 ```diff
 try {
