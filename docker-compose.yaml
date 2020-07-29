@@ -1,0 +1,31 @@
+version: '3'
+services:
+  nginx:
+    image: hvitoi/vivo-nginx
+    build:
+      dockerfile: Dockerfile
+      context: ./nginx
+    restart: always
+    ports:
+      - '3000:80'
+
+  client:
+    image: hvitoi/vivo-client
+    build:
+      dockerfile: Dockerfile
+      context: ./client
+    restart: always
+    volumes:
+      - /app/node_modules
+      - ./client:/app
+    stdin_open: true
+
+  server:
+    image: hvitoi/vivo-server
+    build:
+      dockerfile: Dockerfile
+      context: ./server
+    restart: always
+    volumes:
+      - /app/node_modules
+      - ./server:/app

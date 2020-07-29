@@ -1,0 +1,33 @@
+apiVersion: skaffold/v2beta5
+kind: Config
+
+metadata:
+  name: vivo
+
+deploy:
+  kubectl:
+    manifests:
+      - ./infra/k8s/*
+
+build:
+  local:
+    push: false
+  artifacts:
+    # Imagem 'server'
+    - image: hvitoi/vivo-server
+      context: server
+      docker:
+        dockerfile: Dockerfile
+      sync:
+        manual:
+          - src: '**/*.ts'
+            dest: .
+    # Imagem 'client'
+    - image: hvitoi/vivo-client
+      context: client
+      docker:
+        dockerfile: Dockerfile
+      sync:
+        manual:
+          - src: '**/*.js'
+            dest: .
