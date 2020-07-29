@@ -1,6 +1,6 @@
 # Sistema para cadastro de vagas
 
-Este é um sistema de cadastro de candidatura para vagas. Possui três serviços:
+Este é um sistema de candidatura a vagas de programação. Possui três serviços:
 
 - Cliente
 - Servidor
