@@ -41,6 +41,12 @@ docker-compose up --build
 minikube start
 ```
 
+- Ativar o serviço Ingress [Nginx](https://github.com/kubernetes/ingress-nginx/) no cluster
+
+```bash
+minikube addons enable ingress
+```
+
 - Obter o ip do cluster
 
 ```bash
